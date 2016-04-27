@@ -31,13 +31,16 @@
  * you need to fix this function.
  *#
 #macro(gridresultpreparequeries $className $collist $filterfrom $filterwhere)
-  #set($offset = $util.parseInt($request.get('offset')))
+  #set($offset = $mathtool.toInteger($request.get('offset')))
+  #if($offset == $null)
+    #set($offset = 0)
+  #end
   ## offset starts from 0 in velocity and 1 in javascript
   #set($offset = $offset - 1)
   #if($offset &lt; 0)
     #set($offset = 0)
   #end
-  #set($limit = $util.parseInt($request.get('limit')))
+  #set($limit = $mathtool.toInteger($request.get('limit')))
   #set($tablelist = $util.arrayList)
 
 
