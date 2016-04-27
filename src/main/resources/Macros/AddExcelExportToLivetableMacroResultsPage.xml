@@ -258,7 +258,7 @@
 $items
    #foreach($item in $items)
 $item $rowCount
-     #set($viewable = $xwiki.hasAccessLevel('view', $context.user, "${context.database}:${item}"))
+     #set($viewable = $xwiki.hasAccessLevel('view', $xcontext.user, "${xcontext.database}:${item}"))
      #if(!$viewable)
      #else
        #set($itemDoc = $xwiki.getDocument($item))
@@ -381,7 +381,7 @@ $item $rowCount
       ## TODO need nice translated error message
       Failed to generate Excel file:
 
-      $!context.exception
+      $!xcontext.exception
      #end
     #else
      DONE
