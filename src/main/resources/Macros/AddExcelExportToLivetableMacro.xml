@@ -277,7 +277,11 @@ addExportToExcelFunction();</code>
 }
 .xwiki-livetable-tools-excel:hover{
   cursor: pointer; cursor:hand;
-}</code>
+}
+.xwiki-livetable-tools-text {
+  padding-left: 20px;
+}
+</code>
     </property>
     <property>
       <name>Livetable Excel Export</name>
