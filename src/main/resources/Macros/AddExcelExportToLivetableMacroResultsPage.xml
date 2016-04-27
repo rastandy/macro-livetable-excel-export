@@ -41,7 +41,7 @@
     #set($offset = 0)
   #end
   #set($limit = $mathtool.toInteger($request.get('limit')))
-  #set($tablelist = $util.arrayList)
+  #set($tablelist = [])
 
 
   ##
