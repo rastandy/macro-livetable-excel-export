@@ -232,7 +232,7 @@
       #set($colCount = $colCount + 1)
      #elseif($colname == '_action') ,
      #else
-      #set($colPrettyName = $msg.get("${request.transprefix}${colname}"))
+      #set($colPrettyName = $services.localization.render("${request.transprefix}${colname}"))
       #if($colPrettyName == "${request.transprefix}${colname}")
         #set($colPrettyName = $class.get($colname).getPrettyName())
       #end
@@ -322,8 +322,8 @@ $item $rowCount
              #set($ok = $calc.setDateTimeCell($sheet, $rowCount, $colCount, $itemDoc.getValue($colname, $obj)))             
            #else
              #if($fieldDisplayValue == '')
-               #if ($msg.get("${request.transprefix}emptyvalue") != "${request.transprefix}emptyvalue")
-                 #set($fieldDisplayValue = $msg.get("${request.transprefix}emptyvalue"))
+               #if ($services.localization.render("${request.transprefix}emptyvalue") != "${request.transprefix}emptyvalue")
+                 #set($fieldDisplayValue = $services.localization.render("${request.transprefix}emptyvalue"))
                #end
              #elseif($propType == 'BooleanClass')
                ## export booleans as 1/0 not as the displayed value, since displayed value can be very formatted and we loose the initial purpose 
