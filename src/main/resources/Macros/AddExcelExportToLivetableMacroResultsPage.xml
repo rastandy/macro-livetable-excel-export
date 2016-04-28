@@ -320,6 +320,7 @@ $item $rowCount
            #set($fieldValue = "$!itemDoc.getValue($colname)") 
            #set($fieldDisplayValue = "$!itemDoc.display($colname, 'view')")
            #set($fieldDisplayValue = $fieldDisplayValue.replaceFirst($regextool.quote('{{html clean="false" wiki="false"}}'), '').replaceAll("$regextool.quote('{{/html}}')$", ''))
+           #set($fieldDisplayValue = $displaytool.stripTags($fieldDisplayValue))
            ## TODO: maybe we should force the separator for the list properties, to use some comma or something.
            #if($propType == 'DateClass' &amp;&amp; $itemDoc.getValue($colname, $obj))
              #set($ok = $calc.setDateTimeCell($sheet, $rowCount, $colCount, $itemDoc.getValue($colname, $obj)))             
